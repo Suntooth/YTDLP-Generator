@@ -35,7 +35,7 @@ while True:
         command = base + path + clip + subs
 
 
-    command = command + " " + input("Enter any additional arguments here, or press enter to continue: ") + url
+    command = command + " " + input("Enter any additional arguments here, or press Enter to continue: ") + url
     
     print("")
     subprocess.run(command)
