@@ -15,7 +15,7 @@ while True:
         path = ' -o "Output/%(title)s - %(id)s.%(ext)s"'
 
 
-    clipChoice = True if input("[C]lip or [N]o clip? ").lower() == "c" else False
+    clipChoice = True if input("[C]lip or [F]ull? ").lower() == "c" else False
     if clipChoice:
         start = input("Start: ")
         end = input("End: ")
@@ -24,7 +24,7 @@ while True:
     
     audioChoice = True if input("[A]udio or [V]ideo? ").lower() == "a" else False
     if audioChoice:
-        command = base + " -f ba" + path + clip + url
+        command = base + " -f ba" + path + clip
         
 
     else:
@@ -32,8 +32,11 @@ while True:
         if subsChoice:
              subs = " --write-subs --convert-subs srt"
 
-        command = base + path + clip + subs + url
-            
+        command = base + path + clip + subs
+
+
+    command = command + " " + input("Enter any additional arguments here, or press enter to continue: ") + url
+    
     print("")
     subprocess.run(command)
     print("Done.\n\n")
