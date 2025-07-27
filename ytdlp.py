@@ -20,18 +20,18 @@ while True:
         start = input("Start: ")
         end = input("End: ")
         clip = ' --download-sections "*' + start + '-' + end + '"'
+
+
+    subsChoice = True if input("[S]ubs or [N]o subs? ").lower() == "s" else False
+    if subsChoice:
+        subs = " --write-subs --convert-subs srt"
         
     
     audioChoice = True if input("[A]udio or [V]ideo? ").lower() == "a" else False
     if audioChoice:
-        command = base + " -f ba" + path + clip
+        command = base + " -f ba" + path + clip + subs
         
-
     else:
-        subsChoice = True if input("[S]ubs or [N]o subs? ").lower() == "s" else False
-        if subsChoice:
-             subs = " --write-subs --convert-subs srt"
-
         command = base + path + clip + subs
 
 
