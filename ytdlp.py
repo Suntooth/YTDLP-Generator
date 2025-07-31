@@ -24,7 +24,7 @@ while True:
 
     subsChoice = True if input("[S]ubtitles or [N]o subtitles? ").lower() == "s" else False
     if subsChoice:
-        subs = " --write-subs --convert-subs srt"
+        subs = " --write-subs --convert-subs srt --sub-langs all"
         
     
     audioChoice = True if input("[A]udio or [V]ideo? ").lower() == "a" else False
