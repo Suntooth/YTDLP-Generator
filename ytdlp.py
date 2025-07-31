@@ -22,7 +22,7 @@ while True:
         clip = ' --download-sections "*' + start + '-' + end + '"'
 
 
-    subsChoice = True if input("[S]ubs or [N]o subs? ").lower() == "s" else False
+    subsChoice = True if input("[S]ubtitles or [N]o subtitles? ").lower() == "s" else False
     if subsChoice:
         subs = " --write-subs --convert-subs srt"
         
